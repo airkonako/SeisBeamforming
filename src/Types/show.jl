@@ -1,7 +1,7 @@
 import Base:show, size, summary
 
 const show_os = 12
-const unindexed_fields = (:c, :n)
+const unindexed_fields = (:v, :n)
 
 summary(B::BeamData) = string(typeof(B), " with ", length(B.t), " beampower",
                              size(B.bp,2) == 1 ? "" : "s")
