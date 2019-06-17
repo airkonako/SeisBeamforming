@@ -1,6 +1,7 @@
 *.jl.*.cov
 *.jl.cov
 *.jl.mem
+/EXAMPLE/*/dataset
 .DS_Store
 /Manifest.toml
 /dev/
