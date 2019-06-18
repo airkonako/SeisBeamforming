@@ -35,10 +35,10 @@ mutable struct BeamData
   c::Array{Float64,1}                        # examined wave velocity
   θ::Array{Float64,1}                        # examined azimuth
   t::Array{Float64,1}                         # time
-  bp::Array{<:Union{Complex{Float32},Complex{Float64}},2}  # beam power data
+  bp::Array{<:Union{Complex{Float32},Complex{Float64}},3}  # beam power data
   tstack::Float64                             #stacked time
   tstack_len::Int                             #stacked time length
-  bpstack::Array{Complex{Float32},1}          #stacked beam power
+  bpstack::Array{Complex{Float32},2}          #stacked beam power
 
   function BeamData(
       name     ::String,
@@ -50,10 +50,10 @@ mutable struct BeamData
       c        ::Array{Float64,1},
       θ        ::Array{Float64,1},
       t        ::Array{Float64,1},
-      bp       ::Array{<:Union{Complex{Float32},Complex{Float64}},2},
+      bp       ::Array{<:Union{Complex{Float32},Complex{Float64}},3},
       tstack   ::Float64,
       tstack_len::Int,
-      bpstack  ::Array{Complex{Float32},1}
+      bpstack  ::Array{Complex{Float32},2}
       )
 
       return new(name, misc, notes, bp_len, bp_step, f, c, θ, t, bp, tstack, tstack_len, bpstack)
@@ -70,11 +70,11 @@ BeamData(;
           c        ::Array{Float64,1}          = Array{Float64,1}(undef, 0),
           θ        ::Array{Float64,1}          = Array{Float64,1}(undef, 0),
           t        ::Array{Float64,1}          = Array{Float64,1}(undef, 0),
-          bp       ::Array{<:Union{Complex{Float32},Complex{Float64}},2} =
-                     Array{Complex{Float32},2}(undef, 0, 2),
+          bp       ::Array{<:Union{Complex{Float32},Complex{Float64}},3} =
+                     Array{Complex{Float32},3}(undef, 0, 0, 0),
           tstack    ::Float64                   = zero(Float64),
           tstack_len::Int                       = zero(Int),
-          bpstack  ::Array{Complex{Float32},1}  = Array{ComplexF32,1}(undef, 0)
+          bpstack  ::Array{Complex{Float32},2}  = Array{ComplexF32,2}(undef, 0, 2)
 
           ) = BeamData(name, misc, notes, bp_len, bp_step, f, c, θ, t, bp, tstack, tstack_len, bpstack)
 
