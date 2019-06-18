@@ -1,8 +1,8 @@
 #==================================================#
 # Input Parameters
 
-
-freq_range = [0.01, 1.0] # frequency range for evaluating beam power: used to choose omega from FFTfreq [1/s]
+channel = "BP1"
+freq_range = [0.1, 1.0] # frequency range for evaluating beam power: used to choose omega from FFTfreq [1/s]
 vel_range  = [1000, 5000]      # evaluating velocity range [cmin cmax] [m/s]
 
 Δvel = 500 # grid space of velocity [m/s]
@@ -19,6 +19,7 @@ mkpath(fodir)
 fopath=joinpath(fodir, foname*".jld2")
 
 InputDictionary = Dict([
+        "channel"   => channel
         "freq_range"=> freq_range,
         "vel_range" => vel_range,
         "Δvel"   => Δvel,
@@ -28,4 +29,4 @@ InputDictionary = Dict([
     ])
 
 # mass request with input Dictionary
-seisdownload(InputDictionary, MAX_MEM_PER_CPU=float(MAX_MEM_PER_CPU))
+seisdownload(InputDictionary)
