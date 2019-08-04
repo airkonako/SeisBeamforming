@@ -4,7 +4,6 @@
 /EXAMPLE/*/dataset
 /EXAMPLE/*/fig*
 .DS_Store
-/Manifest.toml
 /dev/
 /docs/build/
 /docs/site/
