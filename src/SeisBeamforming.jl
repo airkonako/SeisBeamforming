@@ -1,6 +1,6 @@
 module SeisBeamforming
 
-using SeisIO, Noise, JLD2, FileIO, PlotlyJS, Geodesy, Statistics, LinearAlgebra, Dates
+using SeisIO, SeisNoise, JLD2, FileIO, PlotlyJS, Geodesy, Statistics, LinearAlgebra, Dates
 
 export seisnoisebeamform
 

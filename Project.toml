@@ -3,6 +3,17 @@ uuid = "c872090a-913f-11e9-2a50-4b83414f27c6"
 authors = ["kurama"]
 version = "0.1.0"
 
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+FileIO = "5789e2e9-d7fb-5bc7-8068-2c6fae9b9549"
+Geodesy = "0ef565a4-170c-5f04-8de2-149903a85f3d"
+JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+PlotlyJS = "f0f68f2c-4968-5e81-91da-67840de0976a"
+SeisIO = "b372bb87-02dd-52bb-bcf6-c30dd83fd342"
+SeisNoise = "8cc7c3c0-6b5d-11e9-39fe-c9cd0236e08b"
+Statistics = "10745b16-79ce-11e8-11f9-7d13ad32a3b2"
+
 [compat]
 julia = "1.1"
 
